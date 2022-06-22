@@ -16,9 +16,11 @@ urlInput.addEventListener("change", async () => {
       outputBox.style = "display:none";
       loadingBox.querySelector("h3").textContent = "Fetching data...";
       loadingBox.style = "display:flex";
-      const videoId = urlInputVal.split("v=")[1];
+      const videoIdRegex =
+        /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/|shorts\/)|(?:(?:watch)?\?v(?:i)?=|\&v(?:i)?=))([^#\&\?]*).*/;
+      const videoId = urlInputVal.match(videoIdRegex)[1];
       const res = await fetch(
-        `https://rimonians-ytdl-mp3.herokuapp.com/info/${videoId}`
+        `http://rimonians-ytdl-mp3.herokuapp.com/info/${videoId}`
       );
       const data = await res.json();
       const thumbnail = data.thumbnails[data.thumbnails.length - 1].url;
