@@ -5,7 +5,7 @@ const poster = document.getElementById("poster");
 const title = document.getElementById("title");
 const downloadLink = document.getElementById("downloadLink");
 
-urlInput.addEventListener("input", async () => {
+urlInput.addEventListener("paste", async () => {
   const urlInputVal = urlInput.value;
   const regex =
     /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube(-nocookie)?\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$/gi;
@@ -17,7 +17,7 @@ urlInput.addEventListener("input", async () => {
       loadingBox.querySelector("h3").textContent = "Fetching data...";
       loadingBox.style = "display:flex";
       const videoId = urlInputVal.split("v=")[1];
-      const res = await fetch(`http://localhost:8080/info/${videoId}`);
+      const res = await fetch(`/info/${videoId}`);
       const data = await res.json();
       const thumbnail = data.thumbnails[data.thumbnails.length - 1].url;
       poster.src = thumbnail;
