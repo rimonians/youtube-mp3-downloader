@@ -5,7 +5,7 @@ const poster = document.getElementById("poster");
 const title = document.getElementById("title");
 const downloadLink = document.getElementById("downloadLink");
 
-urlInput.addEventListener("paste", async () => {
+urlInput.addEventListener("change", async () => {
   const urlInputVal = urlInput.value;
   const regex =
     /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube(-nocookie)?\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$/gi;
