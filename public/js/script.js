@@ -17,7 +17,9 @@ urlInput.addEventListener("change", async () => {
       loadingBox.querySelector("h3").textContent = "Fetching data...";
       loadingBox.style = "display:flex";
       const videoId = urlInputVal.split("v=")[1];
-      const res = await fetch(`/info/${videoId}`);
+      const res = await fetch(
+        `https://rimonians-ytdl-mp3.herokuapp.com/info/${videoId}`
+      );
       const data = await res.json();
       const thumbnail = data.thumbnails[data.thumbnails.length - 1].url;
       poster.src = thumbnail;
