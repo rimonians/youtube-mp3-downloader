@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube downloader</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- Container -->
+    <div class="container">
+      <!-- Input box -->
+      <div class="input__box">
+        <h2>Youtube mp3 downloader</h2>
+        <input
+          id="urlInput"
+          type="text"
+          placeholder="Paste youtube video url to download"
+          spellcheck="false"
+          autocomplete="off"
+        />
+      </div>
+      <!-- Output box -->
+      <div class="output__box">
+        <div class="output__box__image">
+          <img id="poster" src="" alt="" />
+        </div>
+        <div class="output__box__info">
+          <h3 id="title"></h3>
+          <div>
+            <a id="downloadLink" href="">Download Mp3</a>
+          </div>
+        </div>
+      </div>
+      <!-- Loading box -->
+      <div class="loading__box">
+        <h3>Fetching data ...</h3>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
